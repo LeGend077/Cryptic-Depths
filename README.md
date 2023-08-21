@@ -4,6 +4,8 @@ Erenath, who sought to create a sanctuary for souls seeking eternal rest, led to
 
 ---
 
-Hello! This is the place where I'll keep the versions and will update this repository. You can see what I'm making.
+Hello! This is the place where I'll keep the versions and will update this repository. You can see what I'm making 🙂
 
 Join Discord for more information: [https://discord.com/invite/JTpeCEeqkQ](https://discord.com/invite/JTpeCEeqkQ) ✨
+
+Read the License first: [https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE](https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE) ‼
