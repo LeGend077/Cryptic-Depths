@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.1.json",
+	"author": "LeGend077",
+	"name": "Cryptic Depths",
+	"packs": {
+		"behaviorPack": "./BP",
+		"resourcePack": "./RP"
+	},
+	"regolith": {
+		"dataPath": "./data",
+		"filterDefinitions": {},
+		"profiles": {
+			"default": {
+				"export": {
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": []
+			}
+		}
+	}
+}

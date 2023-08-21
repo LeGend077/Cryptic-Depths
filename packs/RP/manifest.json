@@ -1,0 +1,22 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Cryptic Depths: Echoes of Eternis RP",
+        "description": "not to be used without the map.",
+        "uuid": "bcb317ef-e0e5-4a82-b862-ba480dac0671",
+        "version": [ 1, 0, 0 ],
+        "min_engine_version": [ 1, 20, 0 ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "45a15b10-250e-403e-8192-85ffc827e355",
+            "version": [ 1, 0, 0 ]
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "LeGend077"
+        ]
+    }
+}
