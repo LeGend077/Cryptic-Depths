@@ -8,4 +8,4 @@ Hello! This is the place where I'll keep the versions and will update this repos
 
 Join Discord for more information: [https://discord.com/invite/JTpeCEeqkQ](https://discord.com/invite/JTpeCEeqkQ) ✨
 
-Read the License first: [https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE](https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE) ‼
+Read the License first: [https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE](https://github.com/LeGend077/Cryptic-Depths/blob/main/LICENSE) ❌
