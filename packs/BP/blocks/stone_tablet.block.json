@@ -73,13 +73,13 @@
                     -8
                 ],
                 "size": [
-                    15,
-                    2,
-                    4
+                    16,
+                    16,
+                    16
                 ]
             },
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 1
+                "seconds_to_destroy": 10
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 30

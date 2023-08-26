@@ -1,0 +1,156 @@
+{
+    "format_version": "1.12.10",
+    "minecraft:block": {
+        "components": {
+            "minecraft:collision_box": false,
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:geometry": "geometry.wall_candle",
+            "minecraft:light_dampening": 3,
+            "minecraft:light_emission": 5,
+            "minecraft:map_color": "#ffffff",
+            "minecraft:material_instances": {
+                "*": {
+                    "ambient_occlusion": false,
+                    "face_dimming": true,
+                    "render_method": "alpha_test",
+                    "texture": "wall_candle"
+                }
+            }
+        },
+        "description": {
+            "identifier": "lg:wall_candle",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ],
+                    "y_rotation_offset": 180
+                }
+            }
+        },
+        "events": {
+            "lg:particle_spawn_east": {
+                "run_command": {
+                    "command": "particle minecraft:candle_flame_particle ~0.2 ~0.28 ~0.03"
+                }
+            },
+            "lg:particle_spawn_north": {
+                "run_command": {
+                    "command": "particle minecraft:candle_flame_particle ~-0.02 ~0.28 ~0.2"
+                }
+            },
+            "lg:particle_spawn_south": {
+                "run_command": {
+                    "command": "particle minecraft:candle_flame_particle ~0.021 ~0.28 ~-0.21"
+                }
+            },
+            "lg:particle_spawn_west": {
+                "run_command": {
+                    "command": "particle minecraft:candle_flame_particle ~-0.2 ~0.28 ~-0.02"
+                }
+            }
+        },
+        "permutations": [
+            {
+                "components": {
+                    "minecraft:queued_ticking": {
+                        "interval_range": [
+                            60,
+                            140
+                        ],
+                        "looping": true,
+                        "on_tick": {
+                            "event": "lg:particle_spawn_north",
+                            "target": "self"
+                        }
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                },
+                "condition": "q.block_property('minecraft:cardinal_direction') == 'north'"
+            },
+            {
+                "components": {
+                    "minecraft:queued_ticking": {
+                        "interval_range": [
+                            60,
+                            140
+                        ],
+                        "looping": true,
+                        "on_tick": {
+                            "event": "lg:particle_spawn_east",
+                            "target": "self"
+                        }
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                },
+                "condition": "q.block_property('minecraft:cardinal_direction') == 'west'"
+            },
+            {
+                "components": {
+                    "minecraft:queued_ticking": {
+                        "interval_range": [
+                            60,
+                            140
+                        ],
+                        "looping": true,
+                        "on_tick": {
+                            "event": "lg:particle_spawn_south",
+                            "target": "self"
+                        }
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                },
+                "condition": "q.block_property('minecraft:cardinal_direction') == 'south'"
+            },
+            {
+                "components": {
+                    "minecraft:queued_ticking": {
+                        "interval_range": [
+                            60,
+                            140
+                        ],
+                        "looping": true,
+                        "on_tick": {
+                            "event": "lg:particle_spawn_west",
+                            "target": "self"
+                        }
+                    },
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                },
+                "condition": "q.block_property('minecraft:cardinal_direction') == 'east'"
+            }
+        ]
+    }
+}

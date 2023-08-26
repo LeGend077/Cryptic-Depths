@@ -6,6 +6,9 @@
   "texture_data": {
     "stone_tablet": {
       "textures": "textures/blocks/stone_tablet"
-    }
+    },
+	"wall_candle": {
+		"textures": "textures/blocks/wall_candle"
+	}
   }
 }

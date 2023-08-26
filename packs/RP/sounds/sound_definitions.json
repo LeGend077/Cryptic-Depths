@@ -1,0 +1,4 @@
+{
+  "metal_resonance": { "category": "music", "sounds": [{ "name": "sounds/misc/metal_resonance", "stream": true, "volume": 1 }]},
+"spooky_ambience_1": { "category": "music", "sounds": [{ "name": "sounds/misc/spooky_ambience_1", "stream": true, "volume": 1 }]}
+}
