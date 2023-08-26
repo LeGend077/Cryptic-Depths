@@ -118,6 +118,11 @@
 			"binding_name": "#hud_title_text_string",
 			"binding_name_override": "#text",
 			"binding_type": "global"
+		  },
+		  {
+			  "binding_type": "view",
+			  "source_property_name": "((#text - 'legend.objectives.') = #text)",
+			  "target_property_name": "#visible"
 		  }
 		]
 	},
@@ -148,23 +153,99 @@
 		}
 	  }
 	},
+	"objectives_panel": {
+		"type": "panel",
+		"size": [120, 80],
+		"offset": [-4, 4],
+		"layer": 99,
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"controls": [
+			{
+				"background": {
+					"type": "image",
+					"texture": "textures/ui/cryptic_depths/text_container",
+					"layer": -1,
+					"size": ["100%", "100%"]
+				}
+			},
+			{
+				"objectives": {
+					"type": "panel",
+					"size": ["100% - 10px", "100% - 10px"],
+					"layer": 1,
+					"controls": [
+						{
+							"data_control": {
+								"type": "panel",
+								"size": [0,0],
+								"bindings": [
+									{
+										"binding_name": "#hud_title_text_string"
+									},
+									{
+										"binding_name": "#hud_title_text_string",
+										"binding_name_override": "#preserved_text",
+										"binding_condition": "visibility_changed"
+									},
+									{
+										"binding_type": "view",
+										"source_property_name": "(not (#hud_title_text_string = #preserved_text) and (('%.18s' * #hud_title_text_string) = 'legend.objectives.'))",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"objective_item": {
+								"type": "label",
+								"size": ["100%", "100%"],
+								"font_scale_factor": 1,
+								"text": "#text",
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "data_control",
+										"resolve_sibling_scope": true,
+										"source_property_name": "(#preserved_text - 'legend.objectives.')",
+										"target_property_name": "#text"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"objectives_factory": {
+		"type": "panel",
+		"factory": {
+		  "name": "hud_title_text_factory",
+		  "control_ids": {
+			"hud_title_text": "objectives_panel@hud.objectives_panel"
+		  }
+		}
+	},
     "custom_root_panel": {
         "type": "panel",
         "controls": [
+			{
+				"objectives_factory@hud.objectives_panel": {}
+			},
 			{
 				"chat_stack": {
 					"type": "stack_panel",
 					"anchor_from": "top_left",
 					"anchor_to": "top_left",
 					"orientation": "vertical",
+					"size": ["40%", "100%"],
 					"controls": [
-						{ "player_position@hud.player_position": {} }
+						{ "player_position@hud.player_position": {} },
+						{ "chat_panel@hud.chat_panel": {} }
 					]
 				}
 			},
-			{ "chat_panel@hud.chat_panel": {
-				"offset": [0, 10]
-			} },
 			{
 				"item_text_factory": {
 				  "size": [ 100, 10 ],
@@ -191,7 +272,9 @@
 				"cam@camera_renderer": {}
 			},
 			{
-				"mob_effects_renderer@mob_effects_renderer": {}
+				"mob_effects_renderer@mob_effects_renderer": {
+					"offset": [0, 150]
+				}
 			},
 			{
 				"dash_renderer@dash_renderer": {}
@@ -338,7 +421,7 @@
                 "$hud_type": "hud.custom_root_panel"
             },
             {
-                "requires": "(not $win10_edition and not $desktop_screen)",
+                "requires": "(not $win10_edition)",
                 "$hud_type": "hud.root_panel"
             }
         ],
